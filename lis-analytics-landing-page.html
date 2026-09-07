@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LIS Analytics | Modern Monitoring for Legacy Systems</title>
+  <meta name="description" content="LIS Analytics provides SCADA integration, telemetry, dashboards, industrial data, remote monitoring, and SMS alarm notifications. Based in North Texas and serving all 50 states." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#121923;
+      --panel2:#0f151d;
+      --text:#eef4f8;
+      --muted:#aebbc6;
+      --accent:#35d0ba;
+      --accent2:#6aa7ff;
+      --line:#22303d;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#081018 0%,var(--bg) 35%,#0b1016 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:auto;padding:0 22px}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(8,16,24,.86);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .brand{font-weight:800;letter-spacing:.5px;font-size:1.25rem}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:24px;color:var(--muted);font-size:.95rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:10px;font-weight:700;
+      border:1px solid transparent;transition:.2s ease
+    }
+    .btn-primary{background:var(--accent);color:#06120f}
+    .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .btn-secondary{border-color:var(--line);background:#101720;color:var(--text)}
+    .hero{
+      padding:92px 0 64px;
+      display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center
+    }
+    .eyebrow{
+      display:inline-block;color:var(--accent);font-weight:800;
+      text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin-bottom:16px
+    }
+    h1{
+      margin:0 0 18px;font-size:clamp(2.7rem,6vw,5.8rem);line-height:.95;letter-spacing:-.04em
+    }
+    .lede{font-size:1.22rem;color:var(--muted);max-width:720px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .trust{margin-top:24px;color:#c9d3da;font-size:.95rem}
+    .hero-card{
+      background:linear-gradient(145deg,#131d28,#0d141c);
+      border:1px solid var(--line);border-radius:22px;padding:26px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35)
+    }
+    .dash{
+      display:grid;gap:14px
+    }
+    .metric{
+      background:#0b1219;border:1px solid #1b2a36;border-radius:14px;padding:16px
+    }
+    .metric small{display:block;color:var(--muted);margin-bottom:6px}
+    .metric strong{font-size:1.8rem}
+    .ok{color:#62df9b}
+    .warn{color:#ffd166}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    section{padding:70px 0}
+    .section-title{font-size:clamp(2rem,4vw,3.4rem);margin:0 0 14px;line-height:1.05}
+    .section-copy{color:var(--muted);max-width:820px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+    .card{
+      background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px
+    }
+    .card h3{margin-top:0}
+    .card p,.card li{color:var(--muted)}
+    .card ul{padding-left:19px}
+    .band{
+      background:linear-gradient(90deg,rgba(53,208,186,.12),rgba(106,167,255,.08));
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
+    .step{
+      border-left:3px solid var(--accent);padding:8px 0 8px 18px
+    }
+    .step b{display:block;margin-bottom:6px}
+    .step span{color:var(--muted)}
+    .cta{
+      text-align:center;background:var(--panel2);border:1px solid var(--line);
+      border-radius:22px;padding:42px 26px
+    }
+    footer{padding:38px 0 54px;color:var(--muted);border-top:1px solid var(--line)}
+    .kicker{color:var(--accent);font-weight:700}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .navlinks{display:none}
+    }
+    @media (max-width:620px){
+      .cards,.steps,.grid3{grid-template-columns:1fr}
+      .hero{padding-top:66px}
+      .nav .btn{display:none}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">LIS <span>Analytics</span></div>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#remote">Remote Integration</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="mailto:info@lisanalytics.com?subject=Legacy%20System%20Review">Request a Review</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Legacy Integration Solutions LLC</div>
+      <h1>Keep the Controls.<br>Upgrade the Visibility.</h1>
+      <p class="lede">
+        LIS Analytics modernizes legacy SCADA, telemetry, PLC, RTU, and industrial monitoring systems with browser dashboards,
+        historical logging, remote diagnostics, MQTT integration, and SMS alarm notifications—without forcing unnecessary rip-and-replace upgrades.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Request a System Review</a>
+        <a class="btn btn-secondary" href="#services">See How It Works</a>
+      </div>
+      <div class="trust">Based in North Texas • Serving all 50 states • Remote integration available</div>
+    </div>
+
+    <div class="hero-card">
+      <div class="dash">
+        <div class="grid3">
+          <div class="metric"><small>Tower Level</small><strong>132.1 ft</strong></div>
+          <div class="metric"><small>Well #4</small><strong class="ok">RUNNING</strong></div>
+          <div class="metric"><small>Well #5</small><strong class="ok">READY</strong></div>
+        </div>
+        <div class="metric"><small>System Communications</small><strong class="ok">OPERATIONAL</strong></div>
+        <div class="metric"><small>Alarm Status</small><strong class="ok">NO ACTIVE ALARMS</strong></div>
+        <div class="metric"><small>Remote Integration</small><strong>Dashboard • MQTT • SMS • Logging</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="kicker">MODERN MONITORING FOR EXISTING EQUIPMENT</div>
+      <h2 class="section-title">Your system may already have the data you need.</h2>
+      <p class="section-copy">
+        Many older systems still control pumps, wells, tanks, motors, and remote sites reliably. The problem is often visibility.
+        LIS Analytics identifies the data already present and makes it easier to access, understand, log, and monitor.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">LIS MONITOR</div>
+      <h2 class="section-title">A modern dashboard for legacy infrastructure.</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>SCADA & Telemetry</h3>
+          <ul>
+            <li>PLCs and RTUs</li>
+            <li>SCADAPack systems</li>
+            <li>Legacy radio networks</li>
+            <li>RS-232 / RS-485</li>
+            <li>Modbus RTU / TCP</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Modern Monitoring</h3>
+          <ul>
+            <li>Browser dashboards</li>
+            <li>Historical trends</li>
+            <li>Alarm and event logging</li>
+            <li>MQTT integration</li>
+            <li>Windows-based deployment</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Notifications & Support</h3>
+          <ul>
+            <li>SMS alarm notifications</li>
+            <li>Communication-loss alerts</li>
+            <li>Remote diagnostics</li>
+            <li>Secure technician access</li>
+            <li>Optional off-site data services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="remote" class="band">
+    <div class="wrap">
+      <div class="kicker">REMOTE-FIRST WHEN PRACTICAL</div>
+      <h2 class="section-title">You may not need an on-site visit.</h2>
+      <p class="section-copy">
+        Depending on your equipment, network access, and documentation, LIS Analytics may be able to assess, configure, test,
+        and commission much—or potentially all—of your monitoring solution remotely. That can reduce travel, installation time, and project cost.
+      </p>
+      <div class="cards">
+        <div class="card"><h3>Remote Assessment</h3><p>Review existing PLCs, RTUs, radios, gateways, network architecture, and available data.</p></div>
+        <div class="card"><h3>Remote Configuration</h3><p>Configure gateways, Modbus mapping, dashboards, alarms, logging, and SMS notifications.</p></div>
+        <div class="card"><h3>Remote Support</h3><p>Securely troubleshoot software and communications without exposing critical control systems to the public internet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="kicker">LOCAL-FIRST ARCHITECTURE</div>
+      <h2 class="section-title">Your monitoring system does not have to depend on the cloud.</h2>
+      <p class="section-copy">
+        LIS Monitor can run on an existing compatible Windows computer at the customer's facility. Live monitoring, historical logging,
+        and alarm detection remain local, while optional internet services provide SMS, remote diagnostics, and off-site reporting.
+      </p>
+    </div>
+  </section>
+
+  <section id="process" class="band">
+    <div class="wrap">
+      <div class="kicker">OUR PROCESS</div>
+      <h2 class="section-title">Integrate first. Replace only when necessary.</h2>
+      <div class="steps">
+        <div class="step"><b>1. Assess</b><span>Document equipment, protocols, communications, and monitoring requirements.</span></div>
+        <div class="step"><b>2. Plan</b><span>Identify the simplest practical path to retrieve and present the data.</span></div>
+        <div class="step"><b>3. Configure</b><span>Build the dashboard, mapping, logging, alarms, and remote-access strategy.</span></div>
+        <div class="step"><b>4. Test</b><span>Verify communications and monitoring before deployment.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <div class="kicker">NORTH TEXAS BASED • NATIONWIDE SERVICE</div>
+        <h2 class="section-title">Start with a legacy system review.</h2>
+        <p class="section-copy" style="margin:0 auto 24px">
+          Have an older SCADA, PLC, RTU, radio, or telemetry system that still works but is difficult to monitor?
+          Send us the equipment details and communications architecture. Your system may be a candidate for remote integration.
+        </p>
+        <a class="btn btn-primary" href="mailto:info@lisanalytics.com?subject=Legacy%20System%20Review">Request a System Review</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>LIS Analytics</strong><br>
+    Legacy Integration Solutions LLC<br>
+    Keep the Controls. Upgrade the Visibility.<br><br>
+    SCADA Integration • Telemetry • Dashboards • Industrial Data • Remote Monitoring
+  </div>
+</footer>
+</body>
+</html>
